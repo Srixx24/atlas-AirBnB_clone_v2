@@ -8,7 +8,19 @@ from models.state import State
 app = Flask(__name__)
 
 
+@app.route('/states', strict_slashes=False)
+def states():
+    states = storage.all(State).values()
+    return render_template("9-states.html", states=states)
 
+
+@app.route('/states/<id>', strict_slashes=False)
+def states_id(id):
+    state = storage.get(State, id)
+    if state:
+        return render_template("9-states.html", states=[state])
+    else:
+        return render_template("9-states.html", states=[])
 
 
 @app.teardown_appcontext
