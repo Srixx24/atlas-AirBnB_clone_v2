@@ -18,10 +18,7 @@ def states():
 @app.route('/states/<id>', strict_slashes=False)
 def states_id(id):
     state = storage.get(State, id)
-    if state:
-        return render_template("9-states.html", states=[state])
-    else:
-        return render_template("9-states.html", states=[])
+    return render_template("9-states.html", states=[state])
 
 
 @app.teardown_appcontext
