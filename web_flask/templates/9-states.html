@@ -7,7 +7,7 @@
         {% if key is none %}
         <H1>States</H1>
         <UL>
-            {% for state in states | sort(attribute='name')%}
+            {% for state in states | sort(attribute='name') %}
             <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
                     {% endfor %}
                 </UL>
@@ -16,7 +16,7 @@
                 <H1>State: {{ states[key].name }}</H1>
                     <H3>Cities:</H3>
                         <UL>
-                            {% for city in states[key].cities | sort(attribute='name')%}
+                            {% for city in states[key].cities | sort(attribute='name') %}
                                 <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
                             {% endfor %}
                         </UL>
