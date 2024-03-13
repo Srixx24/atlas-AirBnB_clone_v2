@@ -16,7 +16,7 @@
                 <H1>State: {{ states[key].name }}</H1>
                     <H3>Cities:</H3>
                         <UL>
-                            {% for city in state[key].cities %}
+                            {% for city in states[key].cities %}
                                 <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
                             {% endfor %}
                         </UL>
