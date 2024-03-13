@@ -11,10 +11,8 @@
             <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
                     {% endfor %}
                 </UL>
-            {% endfor %}
-        </UL>
-        {% else %}
-            {% if key in states %}
+            {% else %}
+                {% if key in states %}
                 <H1>State: {{ states[key].name }}</H1>
                     <H3>Cities:</H3>
                         <UL>
